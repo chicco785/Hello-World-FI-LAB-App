@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Fi-lab-app::Application.load_tasks
+FiLabApp::Application.load_tasks

@@ -1,4 +1,4 @@
-Fi-lab-app::Application.routes.draw do
+FiLabApp::Application.routes.draw do
   get "welcome/index"
 
   # The priority is based upon order of creation:
