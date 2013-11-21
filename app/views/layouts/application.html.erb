@@ -1,11 +1,37 @@
 <!DOCTYPE html>
 <head>
-<title>Hello World! - Ruby on Rails</title>
-<%= csrf_meta_tags %>
-<%= stylesheet_link_tag    "application", :media => "all" %>
-</head>
-<body>
-<%= yield %>
-<%= javascript_include_tag "application" %>
-</body>
+    <title><%= FiLabApp.name or "FI-LAB App"%></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "application" %>
+
+    <%= yield :headers %>
+
+    <%= favicon_link_tag "icons/favicon.ico" %>
+
+    <% if protect_against_forgery? %>
+      <%= csrf_meta_tag %>
+    <% end %>
+
+    <script type="text/javascript">
+      I18n.defaultLocale = "<%= I18n.default_locale %>";
+      I18n.locale = "<%= I18n.locale %>";
+    </script>
+
+    <script type="text/javascript">
+      $(document).ready(function() {
+        <%= yield :javascript %>
+      })
+    </script>
+  </head>
+
+  <body>
+    <%= render :partial => "layouts/header" %>
+    <div class="wrapper container-fluid">
+      <div class="flash"></div>
+      <%= yield %>
+    </div>
+    <%= render :partial => "layouts/footer" %>
+  </body>
 </html>

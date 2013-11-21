@@ -3,12 +3,12 @@ require_dependency 'fi_lab_app'
 FiLabApp.setup do |config|
   # The domain this IdM in installed at
   #
-  # config.domain    = 'account.lab.fi-ware.eu'
+  config.domain    = 'info.lab.fi-ware.eu'
 
   # The servives available in the portal
   #
   # service level domain
-  #config.services_name = ['cloud','store','mashup']
+  config.services_name = []
   #
   # title for the nav bar
   #config.services_title =  ['Cloud','Store','Mashup']
@@ -20,7 +20,7 @@ FiLabApp.setup do |config|
   # config.help_enable = 1
   #
   # define serivce level domain for help
-  # config.help_name = ''
+  # config.help_name = 'help'
   #
   # define title for the help in the navigation bar
   # config.help_title = 'Help&info'
